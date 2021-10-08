@@ -9,18 +9,19 @@ public class Sistema {
         return new Scanner(System.in);
     }
 
-    public static Vendedor cadastrarVendedor() {
+    public static Vendedor cadastrarVendedor() throws Exception{
         String nome = dadosUsarios("Digite o nome do vendedor: ").nextLine();
         String cpf = dadosUsarios("Digite o CPF do vendedor: ").nextLine();
         String email = dadosUsarios("Digite o email do vendedor: ").nextLine();
-
+        ServicoVendedor.validarEmail(email);
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email);
     }
 
-    public static Cliente cadastrarCliente() {
+    public static Cliente cadastrarCliente() throws Exception{
         String nome = dadosUsarios("Digite o nome do cliente: ").nextLine();
         String cpf = dadosUsarios("Digite o CPF do cliente: ").nextLine();
         String email = dadosUsarios("Digite o email do cliente: ").nextLine();
+        ServicoCliente.validarEmail(email);
         return ServicoCliente.cadastrarCliente(nome, cpf, email);
     }
 
@@ -42,7 +43,7 @@ public class Sistema {
         System.out.println("Digite [7] para sair do programa: ");
     }
 
-    public static void executarSistem() {
+    public static boolean executarSistem() throws Exception{
 
         boolean repeticao = true;
 
@@ -64,7 +65,6 @@ public class Sistema {
                 venda = cadastrarVendas();
             } else if (opcoesDeMenu == 4) {
                 ServicoDeVenda.exibirVendas();
-
             } else if (opcoesDeMenu == 5) {
                 ServicoVendedor.exibirVendedores();
             } else if (opcoesDeMenu == 6) {
@@ -76,5 +76,6 @@ public class Sistema {
                 System.out.println("Digite um valor valido.");
             }
         }
+        return repeticao;
     }
 }

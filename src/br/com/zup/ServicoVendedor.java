@@ -23,4 +23,9 @@ public class ServicoVendedor {
         }
         return vendedores;
     }
+    public static void validarEmail(String email) throws Exception{
+        if (!email.contains("@")){
+            throw new Exception("E-mail inválido. ");
+        }
+    }
 }
