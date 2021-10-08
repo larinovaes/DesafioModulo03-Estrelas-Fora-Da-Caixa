@@ -13,22 +13,25 @@ public class Sistema {
         String nome = dadosUsarios("Digite o nome do vendedor: ").nextLine();
         String cpf = dadosUsarios("Digite o CPF do vendedor: ").nextLine();
         String email = dadosUsarios("Digite o email do vendedor: ").nextLine();
+        ServicoVendedor.verificarCPF(cpf);
         ServicoVendedor.validarEmail(email);
+        ServicoVendedor.verificarEmail(email);
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email);
     }
 
     public static Cliente cadastrarCliente() throws Exception{
         String nome = dadosUsarios("Digite o nome do cliente: ").nextLine();
         String cpf = dadosUsarios("Digite o CPF do cliente: ").nextLine();
-        String email = dadosUsarios("Digite o email do cliente: ").nextLine();
+        String email = dadosUsarios("Digite o E-mail do cliente: ").nextLine();
+        ServicoCliente.verificarCPF(cpf);
         ServicoCliente.validarEmail(email);
+        ServicoCliente.verificarEmail(email);
         return ServicoCliente.cadastrarCliente(nome, cpf, email);
     }
 
     public static Venda cadastrarVendas() {
         String dataDeRegistro = dadosUsarios("Digite a data que a compra foi efetuada: ").nextLine();
         double valorAserPago = dadosUsarios("Digite o valor a ser pago: ").nextDouble();
-
         return ServicoDeVenda.cadastrarVendas(dataDeRegistro, valorAserPago);
     }
 
@@ -73,7 +76,7 @@ public class Sistema {
                 System.out.println("Você saiu do programa!");
                 repeticao = false;
             } else {
-                System.out.println("Digite um valor valido.");
+                System.out.println("Digite um valor válido.");
             }
         }
         return repeticao;

@@ -28,4 +28,18 @@ public class ServicoVendedor {
             throw new Exception("E-mail inválido. ");
         }
     }
+    public static void verificarEmail(String email) throws Exception{
+        for (Vendedor vendedorReferencia : vendedores) {
+            if (vendedorReferencia.getEmail().equals(email)){
+                throw new Exception("Este e-mail já está cadastrado. Por favor faça o cadastro novamente! ");
+            }
+        }
+    }
+    public static void verificarCPF(String cpf) throws Exception{
+        for (Vendedor cpfReferencia : vendedores) {
+            if (cpfReferencia.getCpf().equals(cpf)){
+                throw new Exception("Este CPF já está cadastrado. Por favor faça o cadastro novamente! ");
+            }
+        }
+    }
 }
