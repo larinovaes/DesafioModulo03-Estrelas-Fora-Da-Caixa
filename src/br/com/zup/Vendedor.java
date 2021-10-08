@@ -6,6 +6,9 @@ public class Vendedor {
     private String cpf;
     private String email;
 
+    public Vendedor() {
+    }
+
     public Vendedor(String nome, String cpf, String email) {
         this.nome = nome;
         this.cpf = cpf;
@@ -40,9 +43,9 @@ public class Vendedor {
     public String toString() {
         StringBuilder dados = new StringBuilder();
         dados.append("============= VENDEDOR ================ ");
-        dados.append("\n Nome: " + getNome());
-        dados.append("\n CPF: " + getCpf());
-        dados.append("\n Email: " + getEmail());
+        dados.append("\n Nome: " + nome);
+        dados.append("\n CPF: " + cpf);
+        dados.append("\n Email: " + email);
         return dados.toString();
     }
 

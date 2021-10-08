@@ -1,13 +1,13 @@
 package br.com.zup;
 
-public class Vendas {
+public class Venda {
 
     private Cliente cliente;
     private Vendedor vendedorResponsavel;
     private String DataDeRegistro;
     private double valorAserPago;
 
-    public Vendas(Cliente cliente, Vendedor vendedorResponsavel, String dataDeRegistro, double valorAserPago) {
+    public Venda(Cliente cliente, Vendedor vendedorResponsavel, String dataDeRegistro, double valorAserPago) {
         this.cliente = cliente;
         this.vendedorResponsavel = vendedorResponsavel;
         DataDeRegistro = dataDeRegistro;
