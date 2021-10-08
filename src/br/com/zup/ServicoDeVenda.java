@@ -11,13 +11,14 @@ public class ServicoDeVenda {
 
     }
 
-    public static Venda cadastrarVendas(String dataDeRegistro, double valorAserPago){
-        Venda venda = new Venda(dataDeRegistro,valorAserPago);
+    public static Venda cadastrarVendas(String dataDeRegistro, double valorAserPago) {
+        Venda venda = new Venda(dataDeRegistro, valorAserPago);
         vendas.add(venda);
         return venda;
     }
-    public static List<Venda> exibirVendas(){
-        for (Venda vendaReferencia: vendas) {
+
+    public static List<Venda> exibirVendas() {
+        for (Venda vendaReferencia : vendas) {
             System.out.println(vendaReferencia);
         }
         return vendas;

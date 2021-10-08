@@ -7,6 +7,7 @@ public class Vendedor {
     private String email;
 
     public Vendedor() {
+
     }
 
     public Vendedor(String nome, String cpf, String email) {
@@ -48,5 +49,4 @@ public class Vendedor {
         dados.append("\n Email: " + email);
         return dados.toString();
     }
-
 }

@@ -1,9 +1,8 @@
 package br.com.zup;
 
 public class Main {
-
-
     public static void main(String[] args) {
+
 
         boolean menuDeRepeticao = true;
 
@@ -11,9 +10,9 @@ public class Main {
 
             try {
                 menuDeRepeticao = Sistema.executarSistem();
-            } catch (Exception mensagemErro){
-                System.out.println(mensagemErro.getMessage());
+            } catch (Exception mensagemDeErro) {
+                System.out.println(mensagemDeErro.getMessage());
             }
-    }
+        }
     }
 }

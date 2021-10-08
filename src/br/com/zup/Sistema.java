@@ -9,7 +9,7 @@ public class Sistema {
         return new Scanner(System.in);
     }
 
-    public static Vendedor cadastrarVendedor() throws Exception{
+    public static Vendedor cadastrarVendedor() throws Exception {
         String nome = dadosUsarios("Digite o nome do vendedor: ").nextLine();
         String cpf = dadosUsarios("Digite o CPF do vendedor: ").nextLine();
         String email = dadosUsarios("Digite o email do vendedor: ").nextLine();
@@ -19,7 +19,7 @@ public class Sistema {
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email);
     }
 
-    public static Cliente cadastrarCliente() throws Exception{
+    public static Cliente cadastrarCliente() throws Exception {
         String nome = dadosUsarios("Digite o nome do cliente: ").nextLine();
         String cpf = dadosUsarios("Digite o CPF do cliente: ").nextLine();
         String email = dadosUsarios("Digite o E-mail do cliente: ").nextLine();
@@ -46,26 +46,20 @@ public class Sistema {
         System.out.println("Digite [7] para sair do programa: ");
     }
 
-    public static boolean executarSistem() throws Exception{
+    public static boolean executarSistem() throws Exception {
 
         boolean repeticao = true;
-
-        Vendedor vendedor = new Vendedor();
-        Cliente cliente = new Cliente();
-        Venda venda = new Venda();
 
         while (repeticao) {
             menu();
             int opcoesDeMenu = dadosUsarios("Digite sua opção:").nextInt();
 
             if (opcoesDeMenu == 1) {
-                vendedor = cadastrarVendedor();
-
+                Vendedor vendedor = cadastrarVendedor();
             } else if (opcoesDeMenu == 2) {
-                cliente = cadastrarCliente();
-
+                Cliente cliente = cadastrarCliente();
             } else if (opcoesDeMenu == 3) {
-                venda = cadastrarVendas();
+                Venda venda = cadastrarVendas();
             } else if (opcoesDeMenu == 4) {
                 ServicoDeVenda.exibirVendas();
             } else if (opcoesDeMenu == 5) {
