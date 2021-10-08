@@ -8,11 +8,10 @@ public class Venda {
     private double valorAserPago;
 
     public Venda() {
+
     }
 
-    public Venda(Cliente cliente, Vendedor vendedorResponsavel, String dataDeRegistro, double valorAserPago) {
-        this.cliente = cliente;
-        this.vendedorResponsavel = vendedorResponsavel;
+    public Venda(String dataDeRegistro, double valorAserPago) {
         DataDeRegistro = dataDeRegistro;
         this.valorAserPago = valorAserPago;
     }

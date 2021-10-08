@@ -24,16 +24,14 @@ public class Sistema {
         return ServicoCliente.cadastrarCliente(nome, cpf, email);
     }
 
-    public static Venda CadastrarVendas() {
-        Vendedor vendedor = cadastrarVendedor();
-        Cliente cliente = cadastrarCliente();
+    public static Venda cadastrarVendas() {
         String dataDeRegistro = dadosUsarios("Digite a data que a compra foi efetuada: ").nextLine();
         double valorAserPago = dadosUsarios("Digite o valor a ser pago: ").nextDouble();
 
-        return ServicoDeVenda.cadastrarVendas(cliente, vendedor, dataDeRegistro, valorAserPago);
+        return ServicoDeVenda.cadastrarVendas(dataDeRegistro, valorAserPago);
     }
 
-    public static void menu(){
+    public static void menu() {
         System.out.println("======================== REGISTRO DE VENDAS SANTA LUCIA ==========================");
         System.out.println("Digite [1] para cadastrar um vendedor: ");
         System.out.println("Digite [2] para cadastrar um cliente: ");
@@ -42,5 +40,41 @@ public class Sistema {
         System.out.println("Digite [5] para ver todos os vendedores cadastrados: ");
         System.out.println("Digite [6] para ver todos os clientes cadastrados: ");
         System.out.println("Digite [7] para sair do programa: ");
+    }
+
+    public static void executarSistem() {
+
+        boolean repeticao = true;
+
+        Vendedor vendedor = new Vendedor();
+        Cliente cliente = new Cliente();
+        Venda venda = new Venda();
+
+        while (repeticao) {
+            menu();
+            int opcoesDeMenu = dadosUsarios("Digite sua opção:").nextInt();
+
+            if (opcoesDeMenu == 1) {
+                vendedor = cadastrarVendedor();
+
+            } else if (opcoesDeMenu == 2) {
+                cliente = cadastrarCliente();
+
+            } else if (opcoesDeMenu == 3) {
+                venda = cadastrarVendas();
+            } else if (opcoesDeMenu == 4) {
+                ServicoDeVenda.exibirVendas();
+
+            } else if (opcoesDeMenu == 5) {
+                ServicoVendedor.exibirVendedores();
+            } else if (opcoesDeMenu == 6) {
+                ServicoCliente.exibirClientes();
+            } else if (opcoesDeMenu == 7) {
+                System.out.println("Você saiu do programa!");
+                repeticao = false;
+            } else {
+                System.out.println("Digite um valor valido.");
+            }
+        }
     }
 }

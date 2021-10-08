@@ -11,8 +11,8 @@ public class ServicoDeVenda {
 
     }
 
-    public static Venda cadastrarVendas(Cliente cliente, Vendedor responsavel, String dataDeRegistro, double valorAserPago){
-        Venda venda = new Venda(cliente,responsavel,dataDeRegistro,valorAserPago);
+    public static Venda cadastrarVendas(String dataDeRegistro, double valorAserPago){
+        Venda venda = new Venda(dataDeRegistro,valorAserPago);
         vendas.add(venda);
         return venda;
     }
