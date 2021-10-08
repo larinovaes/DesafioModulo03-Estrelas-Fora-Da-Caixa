@@ -5,7 +5,6 @@ import java.util.List;
 
 public class ServicoVendedor {
 
-    private static List<Venda> vendas = new ArrayList<>();
     private static List<Vendedor> vendedores = new ArrayList<>();
 
     public ServicoVendedor() {
@@ -17,8 +16,9 @@ public class ServicoVendedor {
         vendedores.add(vendedor);
         return vendedor;
     }
-    public static List<Vendedor> exibirVendedores(){
-        for (Vendedor vendedorReferencia: vendedores) {
+
+    public static List<Vendedor> exibirVendedores() {
+        for (Vendedor vendedorReferencia : vendedores) {
             System.out.println(vendedorReferencia);
         }
         return vendedores;

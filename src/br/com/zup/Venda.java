@@ -7,6 +7,9 @@ public class Venda {
     private String DataDeRegistro;
     private double valorAserPago;
 
+    public Venda() {
+    }
+
     public Venda(Cliente cliente, Vendedor vendedorResponsavel, String dataDeRegistro, double valorAserPago) {
         this.cliente = cliente;
         this.vendedorResponsavel = vendedorResponsavel;
@@ -52,9 +55,6 @@ public class Venda {
         dados.append("============= VENDAS ================ ");
         dados.append("\n Valor a pagar: " + getValorAserPago());
         dados.append("\n Data de registro: " + getDataDeRegistro());
-        dados.append(vendedorResponsavel.toString());
-        dados.append(cliente.toString());
-
         return dados.toString();
     }
 }
