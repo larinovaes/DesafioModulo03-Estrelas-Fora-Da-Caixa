@@ -6,6 +6,7 @@ import java.util.List;
 public class ServicoDeVenda {
 
     private static List<Venda> vendas = new ArrayList<>();
+    private  static List<Vendedor> vendedors = new ArrayList<>();
 
     public ServicoDeVenda() {
 
@@ -22,5 +23,14 @@ public class ServicoDeVenda {
             System.out.println(vendaReferencia);
         }
         return vendas;
+    }
+    public static void atribuindoVendaAoVendedor( String nomeDeVendedor) throws Exception{
+        for (Vendedor vendedorReferencia: vendedors) {
+            if (vendedorReferencia.getNome().equalsIgnoreCase(nomeDeVendedor)) {
+                vendedors.add(vendedorReferencia);
+            } else {
+                throw new Exception("Este Vendedor não esta cadastrado! ");
+            }
+        }
     }
 }

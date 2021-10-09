@@ -4,7 +4,7 @@ public class Venda {
 
     private Cliente cliente;
     private Vendedor vendedorResponsavel;
-    private String DataDeRegistro;
+    private String dataDeRegistro;
     private double valorAserPago;
 
     public Venda() {
@@ -12,8 +12,9 @@ public class Venda {
     }
 
     public Venda(String dataDeRegistro, double valorAserPago) {
-        DataDeRegistro = dataDeRegistro;
+        this.dataDeRegistro = dataDeRegistro;
         this.valorAserPago = valorAserPago;
+
     }
 
     public Cliente getCliente() {
@@ -33,11 +34,11 @@ public class Venda {
     }
 
     public String getDataDeRegistro() {
-        return DataDeRegistro;
+        return dataDeRegistro;
     }
 
     public void setDataDeRegistro(String dataDeRegistro) {
-        DataDeRegistro = dataDeRegistro;
+        dataDeRegistro = dataDeRegistro;
     }
 
     public double getValorAserPago() {
@@ -54,6 +55,8 @@ public class Venda {
         dados.append("============= VENDAS ================ ");
         dados.append("\n Valor a pagar: " + getValorAserPago());
         dados.append("\n Data de registro: " + getDataDeRegistro());
+        dados.append("\n Vendedor: " + getVendedorResponsavel());
+        dados.append("\n Cliente: " + getCliente());
         return dados.toString();
     }
 }
