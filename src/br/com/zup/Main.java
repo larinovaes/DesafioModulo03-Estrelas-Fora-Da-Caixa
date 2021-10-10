@@ -7,7 +7,6 @@ public class Main {
         boolean menuDeRepeticao = true;
 
         while (menuDeRepeticao) {
-
             try {
                 menuDeRepeticao = Sistema.executarSistem();
             } catch (Exception mensagemDeErro) {

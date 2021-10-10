@@ -7,10 +7,9 @@ public class Venda {
     private String dataDeRegistro;
     private double valorAserPago;
 
-    public Venda() {
+    public  Venda(){
 
     }
-
     public Venda(Cliente cliente, Vendedor vendedorResponsavel, String dataDeRegistro, double valorAserPago) {
         this.cliente = cliente;
         this.vendedorResponsavel = vendedorResponsavel;
@@ -22,32 +21,8 @@ public class Venda {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
     public Vendedor getVendedorResponsavel() {
         return vendedorResponsavel;
-    }
-
-    public void setVendedorResponsavel(Vendedor vendedorResponsavel) {
-        this.vendedorResponsavel = vendedorResponsavel;
-    }
-
-    public String getDataDeRegistro() {
-        return dataDeRegistro;
-    }
-
-    public void setDataDeRegistro(String dataDeRegistro) {
-        dataDeRegistro = dataDeRegistro;
-    }
-
-    public double getValorAserPago() {
-        return valorAserPago;
-    }
-
-    public void setValorAserPago(double valorAserPago) {
-        this.valorAserPago = valorAserPago;
     }
 
     @Override

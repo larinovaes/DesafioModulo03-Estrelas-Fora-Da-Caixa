@@ -12,7 +12,7 @@ public class Sistema {
     public static Vendedor cadastrarVendedor() throws Exception {
         String nome = dadosUsarios("Digite o nome do vendedor: ").nextLine();
         String cpf = dadosUsarios("Digite o CPF do vendedor: ").nextLine();
-        String email = dadosUsarios("Digite o email do vendedor: ").nextLine();
+        String email = dadosUsarios("Digite o E-mail do vendedor: ").nextLine();
         ServicoVendedor.verificarCPF(cpf);
         ServicoVendedor.validarEmail(email);
         ServicoVendedor.verificarEmail(email);
@@ -39,6 +39,16 @@ public class Sistema {
         return ServicoDeVenda.cadastrarVendas(cliente, vendedor, dataDeRegistro, valorAserPago);
     }
 
+    public static void pesquisarCompraDeCliente() throws Exception {
+        String cpf = dadosUsarios("Digite o CPF do cliente: ").nextLine();
+        System.out.println(ServicoDeVenda.pesquisarCompraDeClienteEspecifico(cpf));
+    }
+
+    public static void pesquisarVendaDeVendedor() throws Exception {
+        String email = dadosUsarios("Digite o E-mail do vendedor: ").nextLine();
+        System.out.println(ServicoDeVenda.pesquisarVendaDeVendedorEspecifico(email));
+    }
+
     public static void menu() {
         System.out.println("================ REGISTRO DE VENDAS SANTA LUCIA ==================");
         System.out.println("Digite [1] para cadastrar um vendedor: ");
@@ -47,7 +57,9 @@ public class Sistema {
         System.out.println("Digite [4] para ver todos os vendedores cadastrados: ");
         System.out.println("Digite [5] para ver todos os clientes cadastrados: ");
         System.out.println("Digite [6] para ver todas as vendas: ");
-        System.out.println("Digite [7] para sair do programa: ");
+        System.out.println("Digite [7] para pesquisar vendas de vendedores específicos");
+        System.out.println("Digite [8] para pesquisar por compras de clientes específicos");
+        System.out.println("Digite [9] para sair do programa: ");
     }
 
     public static boolean executarSistem() throws Exception {
@@ -71,6 +83,10 @@ public class Sistema {
             } else if (opcoesDeMenu == 6) {
                 ServicoDeVenda.exibirVendas();
             } else if (opcoesDeMenu == 7) {
+                pesquisarVendaDeVendedor();
+            } else if (opcoesDeMenu == 8) {
+                pesquisarCompraDeCliente();
+            } else if (opcoesDeMenu == 9) {
                 System.out.println("Você saiu do programa!!");
                 repeticao = false;
             } else {
