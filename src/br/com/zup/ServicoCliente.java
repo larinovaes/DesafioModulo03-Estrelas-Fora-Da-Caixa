@@ -45,4 +45,13 @@ public class ServicoCliente {
             }
         }
     }
+    public static Cliente pesquisarClienteParaAdicionarAVenda(String nome) throws Exception{
+
+        for (Cliente clienteReferencia: clientes) {
+            if(clienteReferencia.getNome().equals(nome)){
+                return clienteReferencia;
+            }
+        }
+        throw new Exception("Este cliente não está cadastrado");
+    }
 }

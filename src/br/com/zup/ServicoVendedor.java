@@ -37,6 +37,15 @@ public class ServicoVendedor {
             }
         }
     }
+    public static Vendedor pesquisarVendedorParaAdicionarNaVenda(String nome) throws Exception {
+
+        for (Vendedor vendedorReferencia: vendedores) {
+            if(vendedorReferencia.getNome().equals(nome)){
+                return vendedorReferencia;
+            }
+        }
+        throw new Exception("Este vendedor não está cadastrado");
+    }
 
     public static void verificarCPF(String cpf) throws Exception {
         for (Vendedor cpfReferencia : vendedores) {

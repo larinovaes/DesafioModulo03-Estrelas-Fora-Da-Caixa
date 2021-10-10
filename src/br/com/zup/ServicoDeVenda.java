@@ -6,14 +6,14 @@ import java.util.List;
 public class ServicoDeVenda {
 
     private static List<Venda> vendas = new ArrayList<>();
-    private  static List<Vendedor> vendedors = new ArrayList<>();
+
 
     public ServicoDeVenda() {
 
     }
 
-    public static Venda cadastrarVendas(String dataDeRegistro, double valorAserPago) {
-        Venda venda = new Venda(dataDeRegistro, valorAserPago);
+    public static Venda cadastrarVendas(Cliente nomeDoCliente, Vendedor vendedor, String dataDeRegistro, double valorAserPago) {
+        Venda venda = new Venda(nomeDoCliente, vendedor, dataDeRegistro, valorAserPago);
         vendas.add(venda);
         return venda;
     }
@@ -23,14 +23,5 @@ public class ServicoDeVenda {
             System.out.println(vendaReferencia);
         }
         return vendas;
-    }
-    public static void atribuindoVendaAoVendedor( String nomeDeVendedor) throws Exception{
-        for (Vendedor vendedorReferencia: vendedors) {
-            if (vendedorReferencia.getNome().equalsIgnoreCase(nomeDeVendedor)) {
-                vendedors.add(vendedorReferencia);
-            } else {
-                throw new Exception("Este Vendedor não esta cadastrado! ");
-            }
-        }
     }
 }

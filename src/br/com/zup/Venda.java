@@ -11,10 +11,11 @@ public class Venda {
 
     }
 
-    public Venda(String dataDeRegistro, double valorAserPago) {
+    public Venda(Cliente cliente, Vendedor vendedorResponsavel, String dataDeRegistro, double valorAserPago) {
+        this.cliente = cliente;
+        this.vendedorResponsavel = vendedorResponsavel;
         this.dataDeRegistro = dataDeRegistro;
         this.valorAserPago = valorAserPago;
-
     }
 
     public Cliente getCliente() {
@@ -53,10 +54,10 @@ public class Venda {
     public String toString() {
         StringBuilder dados = new StringBuilder();
         dados.append("============= VENDAS ================ ");
-        dados.append("\n Valor a pagar: " + getValorAserPago());
-        dados.append("\n Data de registro: " + getDataDeRegistro());
-        dados.append("\n Vendedor: " + getVendedorResponsavel());
-        dados.append("\n Cliente: " + getCliente());
+        dados.append("\n Cliente: " + cliente.getNome());
+        dados.append("\n Vendedor: " + vendedorResponsavel.getNome());
+        dados.append("\n Valor a pagar: R$" + valorAserPago);
+        dados.append("\n Data de registro: " + dataDeRegistro);
         return dados.toString();
     }
 }

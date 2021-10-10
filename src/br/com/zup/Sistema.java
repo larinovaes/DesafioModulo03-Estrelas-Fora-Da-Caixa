@@ -30,13 +30,17 @@ public class Sistema {
     }
 
     public static Venda cadastrarVendas() throws Exception {
+        String nomeDeVendedor = dadosUsarios("Digite o nome do vendedor: ").nextLine();
+        String nomeDoCliente = dadosUsarios("Digite o nome do cliente: ").nextLine();
         String dataDeRegistro = dadosUsarios("Digite a data que a compra foi efetuada: ").nextLine();
         double valorAserPago = dadosUsarios("Digite o valor a ser pago: ").nextDouble();
-        return ServicoDeVenda.cadastrarVendas(dataDeRegistro, valorAserPago);
+        Vendedor vendedor = ServicoVendedor.pesquisarVendedorParaAdicionarNaVenda(nomeDeVendedor);
+        Cliente cliente = ServicoCliente.pesquisarClienteParaAdicionarAVenda(nomeDoCliente);
+        return ServicoDeVenda.cadastrarVendas(cliente, vendedor, dataDeRegistro, valorAserPago);
     }
 
     public static void menu() {
-        System.out.println("======================== REGISTRO DE VENDAS SANTA LUCIA ==========================");
+        System.out.println("================ REGISTRO DE VENDAS SANTA LUCIA ==================");
         System.out.println("Digite [1] para cadastrar um vendedor: ");
         System.out.println("Digite [2] para cadastrar um cliente: ");
         System.out.println("Digite [3] para cadastrar venda: ");
@@ -46,40 +50,28 @@ public class Sistema {
         System.out.println("Digite [7] para sair do programa: ");
     }
 
-    public static void atribuindoVendedorAVenda() throws Exception {
-        String nomeDeVendedor = dadosUsarios("Digite o nome do vendedor resonsável").nextLine();
-        ServicoDeVenda.atribuindoVendaAoVendedor(nomeDeVendedor);
-    }
-
     public static boolean executarSistem() throws Exception {
 
         boolean repeticao = true;
-
-
 
         while (repeticao) {
             menu();
             int opcoesDeMenu = dadosUsarios("Digite sua opção:").nextInt();
 
             if (opcoesDeMenu == 1) {
-                Vendedor vendedor = cadastrarVendedor();
+                cadastrarVendedor();
             } else if (opcoesDeMenu == 2) {
-                Cliente cliente = cadastrarCliente();
+                cadastrarCliente();
             } else if (opcoesDeMenu == 3) {
-                Venda venda = cadastrarVendas();
-                atribuindoVendedorAVenda();
-
+                cadastrarVendas();
             } else if (opcoesDeMenu == 4) {
                 ServicoVendedor.exibirVendedores();
-
             } else if (opcoesDeMenu == 5) {
                 ServicoCliente.exibirClientes();
-
             } else if (opcoesDeMenu == 6) {
-              ServicoDeVenda.exibirVendas();
-
+                ServicoDeVenda.exibirVendas();
             } else if (opcoesDeMenu == 7) {
-                System.out.println("Você saiu do programa!");
+                System.out.println("Você saiu do programa!!");
                 repeticao = false;
             } else {
                 System.out.println("Digite um valor válido.");
