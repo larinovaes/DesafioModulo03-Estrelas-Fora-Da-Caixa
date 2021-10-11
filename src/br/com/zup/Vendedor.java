@@ -6,9 +6,6 @@ public class Vendedor {
     private String cpf;
     private String email;
 
-    public Vendedor() {
-
-    }
 
     public Vendedor(String nome, String cpf, String email) {
         this.nome = nome;

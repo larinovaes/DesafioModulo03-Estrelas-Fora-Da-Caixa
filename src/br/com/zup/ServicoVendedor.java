@@ -25,26 +25,27 @@ public class ServicoVendedor {
     }
 
     public static void validarEmail(String email) throws Exception {
-        if (!email.contains("@")) {
+        if (!email.contains("@") | !email.contains(".com")) {
             throw new Exception("E-mail inválido. ");
         }
     }
 
     public static void verificarEmail(String email) throws Exception {
         for (Vendedor vendedorReferencia : vendedores) {
-            if (vendedorReferencia.getEmail().equals(email)) {
+            if (vendedorReferencia.getEmail().equalsIgnoreCase(email)) {
                 throw new Exception("Este e-mail já está cadastrado. Por favor faça o cadastro novamente! ");
             }
         }
     }
+
     public static Vendedor pesquisarVendedorParaAdicionarNaVenda(String nome) throws Exception {
 
-        for (Vendedor vendedorReferencia: vendedores) {
-            if(vendedorReferencia.getNome().equals(nome)){
+        for (Vendedor vendedorReferencia : vendedores) {
+            if (vendedorReferencia.getNome().equalsIgnoreCase(nome)) {
                 return vendedorReferencia;
             }
         }
-        throw new Exception("Este vendedor não está cadastrado");
+        throw new Exception("Este vendedor não está cadastrado.");
     }
 
     public static void verificarCPF(String cpf) throws Exception {

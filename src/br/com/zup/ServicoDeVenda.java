@@ -25,25 +25,28 @@ public class ServicoDeVenda {
     }
 
     public static List<Venda> pesquisarCompraDeClienteEspecifico(String cpf) throws Exception {
-        List<Venda> comprasDoCliente = new ArrayList<>();
-        for (Venda vendaReferencia: vendas) {
-            if (vendaReferencia.getCliente().getCpf().equals(cpf)){
-                comprasDoCliente.add(vendaReferencia);
-            } else{
-                throw new Exception("Este cliente não está cadastrado.");
+        List<Venda> compraDoCliente = new ArrayList<>();
+        for (Venda vendaReferencia : vendas) {
+            if (vendaReferencia.getCliente().getCpf().equals(cpf)) {
+                compraDoCliente.add(vendaReferencia);
             }
         }
-        return comprasDoCliente;
+        if (compraDoCliente.size() == 0) {
+            throw new Exception("Este cliente não possui nenhuma compra ou não está cadastado.");
+        }
+        return compraDoCliente;
     }
+
     public static List<Venda> pesquisarVendaDeVendedorEspecifico(String email) throws Exception {
-      List<Venda> vendaDoVendedor = new ArrayList<>();
-        for (Venda vendaReferencia: vendas) {
-            if(vendaReferencia.getVendedorResponsavel().getEmail().equals(email)){
-                vendaDoVendedor.add(vendaReferencia);
-            } else{
-                throw new Exception("Este vendedor não está cadastrado");
+        List<Venda> vendasDoVendedor = new ArrayList<>();
+        for (Venda vendaReferencia : vendas) {
+            if (vendaReferencia.getVendedorResponsavel().getEmail().equalsIgnoreCase(email)) {
+                vendasDoVendedor.add(vendaReferencia);
             }
         }
-        return vendaDoVendedor;
+        if (vendasDoVendedor.size() == 0) {
+            throw new Exception("Este vendedor não possui nenhuma venda ou não está cadastado.");
+        }
+        return vendasDoVendedor;
     }
 }

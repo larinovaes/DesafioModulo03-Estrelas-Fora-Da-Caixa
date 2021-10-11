@@ -36,7 +36,8 @@ public class Sistema {
         double valorAserPago = dadosUsarios("Digite o valor a ser pago: ").nextDouble();
         Vendedor vendedor = ServicoVendedor.pesquisarVendedorParaAdicionarNaVenda(nomeDeVendedor);
         Cliente cliente = ServicoCliente.pesquisarClienteParaAdicionarAVenda(nomeDoCliente);
-        return ServicoDeVenda.cadastrarVendas(cliente, vendedor, dataDeRegistro, valorAserPago);
+       return ServicoDeVenda.cadastrarVendas(cliente, vendedor, dataDeRegistro, valorAserPago);
+
     }
 
     public static void pesquisarCompraDeCliente() throws Exception {
@@ -57,8 +58,8 @@ public class Sistema {
         System.out.println("Digite [4] para ver todos os vendedores cadastrados: ");
         System.out.println("Digite [5] para ver todos os clientes cadastrados: ");
         System.out.println("Digite [6] para ver todas as vendas: ");
-        System.out.println("Digite [7] para pesquisar vendas de vendedores específicos");
-        System.out.println("Digite [8] para pesquisar por compras de clientes específicos");
+        System.out.println("Digite [7] para pesquisar vendas de vendedores específicos: ");
+        System.out.println("Digite [8] para pesquisar por compras de clientes específicos: ");
         System.out.println("Digite [9] para sair do programa: ");
     }
 
@@ -87,12 +88,12 @@ public class Sistema {
             } else if (opcoesDeMenu == 8) {
                 pesquisarCompraDeCliente();
             } else if (opcoesDeMenu == 9) {
-                System.out.println("Você saiu do programa!!");
+                System.out.println("Você saiu do programa.");
                 repeticao = false;
             } else {
                 System.out.println("Digite um valor válido.");
             }
         }
-        return repeticao;
+       return repeticao;
     }
 }

@@ -28,7 +28,7 @@ public class Venda {
     @Override
     public String toString() {
         StringBuilder dados = new StringBuilder();
-        dados.append("============= VENDAS ================ ");
+        dados.append("\n============= VENDAS ================ ");
         dados.append("\n Cliente: " + cliente.getNome());
         dados.append("\n Vendedor: " + vendedorResponsavel.getNome());
         dados.append("\n Valor a pagar: R$" + valorAserPago);

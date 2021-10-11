@@ -25,7 +25,7 @@ public class ServicoCliente {
     }
 
     public static void validarEmail(String email) throws Exception {
-        if (!email.contains("@")) {
+        if (!email.contains("@") | !email.contains(".com")) {
             throw new Exception("E-mail inválido. ");
         }
     }
@@ -48,10 +48,10 @@ public class ServicoCliente {
     public static Cliente pesquisarClienteParaAdicionarAVenda(String nome) throws Exception{
 
         for (Cliente clienteReferencia: clientes) {
-            if(clienteReferencia.getNome().equals(nome)){
+            if(clienteReferencia.getNome().equalsIgnoreCase(nome)){
                 return clienteReferencia;
             }
         }
-        throw new Exception("Este cliente não está cadastrado");
+        throw new Exception("Este cliente não está cadastrado.");
     }
 }
