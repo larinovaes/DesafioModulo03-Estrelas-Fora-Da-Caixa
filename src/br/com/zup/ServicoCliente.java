@@ -45,10 +45,11 @@ public class ServicoCliente {
             }
         }
     }
-    public static Cliente pesquisarClienteParaAdicionarAVenda(String nome) throws Exception{
 
-        for (Cliente clienteReferencia: clientes) {
-            if(clienteReferencia.getNome().equalsIgnoreCase(nome)){
+    public static Cliente pesquisarClienteParaAdicionarAVenda(String nome) throws Exception {
+
+        for (Cliente clienteReferencia : clientes) {
+            if (clienteReferencia.getNome().equalsIgnoreCase(nome)) {
                 return clienteReferencia;
             }
         }

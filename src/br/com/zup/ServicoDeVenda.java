@@ -25,16 +25,16 @@ public class ServicoDeVenda {
     }
 
     public static List<Venda> pesquisarCompraDeClienteEspecifico(String cpf) throws Exception {
-        List<Venda> compraDoCliente = new ArrayList<>();
+        List<Venda> comprasDoCliente = new ArrayList<>();
         for (Venda vendaReferencia : vendas) {
             if (vendaReferencia.getCliente().getCpf().equals(cpf)) {
-                compraDoCliente.add(vendaReferencia);
+                comprasDoCliente.add(vendaReferencia);
             }
         }
-        if (compraDoCliente.size() == 0) {
+        if (comprasDoCliente.size() == 0) {
             throw new Exception("Este cliente não possui nenhuma compra ou não está cadastado.");
         }
-        return compraDoCliente;
+        return comprasDoCliente;
     }
 
     public static List<Venda> pesquisarVendaDeVendedorEspecifico(String email) throws Exception {

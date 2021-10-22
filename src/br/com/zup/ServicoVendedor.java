@@ -24,12 +24,6 @@ public class ServicoVendedor {
         return vendedores;
     }
 
-    public static void validarEmail(String email) throws Exception {
-        if (!email.contains("@") | !email.contains(".com")) {
-            throw new Exception("E-mail inválido. ");
-        }
-    }
-
     public static void verificarEmail(String email) throws Exception {
         for (Vendedor vendedorReferencia : vendedores) {
             if (vendedorReferencia.getEmail().equalsIgnoreCase(email)) {

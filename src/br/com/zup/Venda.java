@@ -7,9 +7,7 @@ public class Venda {
     private String dataDeRegistro;
     private double valorAserPago;
 
-    public  Venda(){
 
-    }
     public Venda(Cliente cliente, Vendedor vendedorResponsavel, String dataDeRegistro, double valorAserPago) {
         this.cliente = cliente;
         this.vendedorResponsavel = vendedorResponsavel;

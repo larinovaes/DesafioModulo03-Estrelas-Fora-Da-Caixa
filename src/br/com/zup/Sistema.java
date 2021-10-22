@@ -14,7 +14,7 @@ public class Sistema {
         String cpf = dadosUsarios("Digite o CPF do vendedor: ").nextLine();
         String email = dadosUsarios("Digite o E-mail do vendedor: ").nextLine();
         ServicoVendedor.verificarCPF(cpf);
-        ServicoVendedor.validarEmail(email);
+        ServicoCliente.validarEmail(email);
         ServicoVendedor.verificarEmail(email);
         return ServicoVendedor.cadastrarVendedor(nome, cpf, email);
     }
@@ -36,7 +36,7 @@ public class Sistema {
         double valorAserPago = dadosUsarios("Digite o valor a ser pago: ").nextDouble();
         Vendedor vendedor = ServicoVendedor.pesquisarVendedorParaAdicionarNaVenda(nomeDeVendedor);
         Cliente cliente = ServicoCliente.pesquisarClienteParaAdicionarAVenda(nomeDoCliente);
-       return ServicoDeVenda.cadastrarVendas(cliente, vendedor, dataDeRegistro, valorAserPago);
+        return ServicoDeVenda.cadastrarVendas(cliente, vendedor, dataDeRegistro, valorAserPago);
 
     }
 
@@ -94,6 +94,6 @@ public class Sistema {
                 System.out.println("Digite um valor válido.");
             }
         }
-       return repeticao;
+        return repeticao;
     }
 }
